@@ -1,2 +1,3 @@
-# address-book-react
-A basic address book made with React.js
+## Address book created with React.js
+
+- Bootstraped with create-react-app
