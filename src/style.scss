@@ -1,0 +1,35 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 2em;
+    padding: 0;
+}
+
+label{
+    font-size: 130%;
+}
+
+input{
+    border-radius: 25px;
+    border: 2px solid purple;
+    font-size: 130%;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+// .list{
+// }
+
+.addContactForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton{
+    border-radius: 25px;
+    background-color: purple;
+    color: white;
+    padding: 0.5em;
+}
