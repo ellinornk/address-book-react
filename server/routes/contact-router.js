@@ -6,6 +6,10 @@ const router = express.Router()
 
 router.post('/contact', ContactsController.createContact)
 
+router.put('/contact/:id', ContactsController.updateContact)
+
+router.delete('/contact/:id', ContactsController.deleteContact)
+
 router.get('/contacts', ContactsController.getContacts)
 
 
