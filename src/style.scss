@@ -1,10 +1,58 @@
+//Variables 
+$pink: #D417B8;
+$orange: #F4962B;
+$light-gray: rgb(245, 245, 245);
+
+
+//Mixins
+@mixin default-button{
+    border-radius: 25px;
+    background-color: $pink;
+    color: white;
+    padding: 0.5em;
+    background-image: linear-gradient(to bottom right, $pink, $orange);
+    border: 0;
+    font-weight: 500;
+}
+
+@mixin focus{
+    background-color: #fff;
+    outline: 0;
+    box-shadow: 0 0 0.35rem $pink;
+}
+
 *{
     font-family: 'Montserrat', sans-serif;
 }
 
 body{
-    margin: 2em;
+    margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $light-gray;
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: black;
+    font-size: 250%;
+    background: -webkit-linear-gradient($pink, $orange);    
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 2em 0;
+}
+
+h2{
+    margin-bottom: 0.2em;
+}
+
+a{
+    color: $pink;
+    :focus {
+        outline: 0;
+        
+    }  
 }
 
 label{
@@ -13,23 +61,98 @@ label{
 
 input{
     border-radius: 25px;
-    border: 2px solid purple;
+    border: 2px solid $pink;
     font-size: 130%;
     padding: 0.5em;
     margin-bottom: 0.5em;
+    text-align: center;
+    &:focus {
+        @include focus;
+    }    
 }
 
-// .list{
-// }
+.listItem{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    border-radius: 10px;
+    margin: 1.5em 0;
 
+    p:first-child{
+        font-weight: 600;
+    }
+    
+    .contactContent{
+        text-align: left;
+    }
+    
+    .buttonsDiv{
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        button{
+            &:focus {
+                @include focus;
+            }  
+        }
+    }
+    
+    .deleteButton{
+        background-color: white;
+        border: none;
+        border-radius: 100px;
+        height: 3em;
+        width: 3em;
+        .deleteButtonIcon{
+            height: 1.5em;
+            width: 1.5em;
+        }  
+    }
+
+    .editButton{
+        @include default-button;
+        font-size: 90%;  
+        padding: 0.7em;
+        width: 5em;
+    }
+}
+
+
+//Add Contact form
 .addContactForm{
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
+.formHeader{
+    display: flex;
+    justify-content: center;
+
+    img{
+        height: 1em;
+        width: auto;
+        align-self: flex-end;
+        padding: 0.7em;
+    }
+}
+
+.transformedArrow{
+    transform: rotate(90deg);
+}
+
 .submitButton{
-    border-radius: 25px;
-    background-color: purple;
-    color: white;
-    padding: 0.5em;
+    @include default-button;
+}
+
+
+//Media queries
+
+//Desktop
+@media screen and (min-width: 992px) {
+    .list{
+        width: 40em;
+    }
 }
