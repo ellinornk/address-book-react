@@ -1,12 +1,48 @@
 ## Address book created with React.js
 
-- Bootstraped with create-react-app
+This repository has been bootstraped with create-react-app.
 
-Server on port 8001
+It uses Node.js as backend. Built with Express and Mongo. A MERN stack. 
+
+
+# Instructions
+## Start backend
+
+Start MongoDB with:
+
+```
+brew services start mongodb-community 
+```
+alt:
+```
+brew services restart mongodb-community 
+```
+
+In a new terminal write: 
+
+```
+mongo
+use address-book
+```
+Mongo is upp and running. Time to start the server! (it will start on http://localhost:8001/ )
+
+```
 cd server
-nodemon index.js
+nodemon index.js 
+```
 
 
-API docs
-api/contacts - All contacts
-api/contact - create contact
+## Start frontend
+```
+cd src
+npm start
+```
+
+
+# API documentation
+
+http://localhost:8001/api
+
+- /contacts - __GET__ All contacts
+
+- /contact - __POST__ a contact
