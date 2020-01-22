@@ -35,6 +35,7 @@ nodemon index.js
 ## Start frontend
 ```
 cd src
+npm install
 npm start
 ```
 
