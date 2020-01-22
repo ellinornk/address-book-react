@@ -46,3 +46,5 @@ http://localhost:8001/api
 - /contacts - __GET__ All contacts
 
 - /contact - __POST__ a contact
+
+- /contact/${id} - __UPDATE__ and __DELETE__ a contact
